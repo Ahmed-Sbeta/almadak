@@ -1,0 +1,32 @@
+[
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The reeeeeee",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The reeeeeee",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The reeeeeee",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The reeeeeee",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The reeeeeee",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  }
+]

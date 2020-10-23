@@ -1,0 +1,26 @@
+[
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The tes",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The tes",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The tes",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/Pizza.jpg",
+    "placeName": "The tes",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  }
+]
