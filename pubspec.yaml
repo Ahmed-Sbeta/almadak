@@ -1,5 +1,5 @@
 name: almadak
-description: مطعم المذاق للوجبات السريعه
+description: مطعم المذاق للشاورما والمشويات
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -26,6 +26,7 @@ dependencies:
   intl: ^0.16.1
   flutter:
     sdk: flutter
+  custom_splash: ^0.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -51,6 +52,11 @@ flutter:
   assets:
     - assets/images/
     - assets/jsonData/
+    - assets/images/mm.jpeg
+    - assets/images/kkk.jpg
+    - assets/images/madaq4.png
+    - assets/images/starterpage.jpg
+    - assets/images/madaq.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
