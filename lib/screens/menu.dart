@@ -2,12 +2,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 //banner items
-var bannerItems = ["Burger" , "Cheese" , "Noodles", "Pizza"];
+var bannerItems = ["مشــويات" , " وجبــات" , "بوكــس السـعادة", "سندوتـشـات","شــاورما المذاق","سلاطات المذاق "];
 var bannerImages = [
-  "assets/images/Burger.jpg",
-  "assets/images/Cheese.jpg",
-  "assets/images/Noodles.jpg",
-  "assets/images/Pizza.jpg",
+  "assets/images/mashwe.jpg",
+  "assets/images/meals_meat.jpg",
+  "assets/images/happybox.jpg",
+  "assets/images/sandwich.jpg",
+  "assets/images/shawerma.jpg",
+  "assets/images/salad.jpg",
 ];
 
 String path = "meals.json";
@@ -18,7 +20,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     var screenHieght = MediaQuery.of(context).size.height;
@@ -84,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Text(bannerItems[x],style: TextStyle(fontSize: 25.0, color: Colors.white),
                       ),
                       Text(
-                        "More than 40% off",
+                        "طعــم ولا أروع",
                         style: TextStyle(
                           fontSize: 12.0,
                           color: Colors.white,
@@ -150,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
                         child: Text(finalString,overflow: TextOverflow.ellipsis ,style: TextStyle(fontSize: 12.0,color: Colors.black54),maxLines: 1,),
-                      )
+                      ),
                     ],
                   ),
                 )
@@ -165,20 +166,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
     //end
     return Scaffold(
-      key: _scaffoldKey,
+      backgroundColor: Colors.white,
       body: Container(
         height: screenHieght,
         width: screenWidth,
         child: SafeArea(
-          child: SingleChildScrollView(
+          child: SingleChildScrollView( 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(icon: Icon(Icons.menu),onPressed: (){
-                        _scaffoldKey.currentState.openDrawer();
+                    IconButton(icon: Icon(Icons.arrow_back),onPressed: (){
+
                     }),
                     Text("المذاق", style: TextStyle(fontSize:32 , fontFamily: "Reem"), ),
                     IconButton(icon: Icon(Icons.location_on), onPressed: (){}),
@@ -200,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder:(context,snapshot){
                       if(snapshot.hasData){
                         return Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(10.0),
                           child: ListView(
                             primary: false,
                             shrinkWrap: true,

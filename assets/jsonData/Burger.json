@@ -1,42 +1,42 @@
 [
   {
-    "placeImage": "assets/images/Pizza.jpg",
-    "placeName": "The Hawkers",
+    "placeImage": "assets/images/happybox.jpg",
+    "placeName": "مشكل المذاق أكسترا عادي",
     "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
     "minOrder": 20
   },
   {
-    "placeImage": "assets/images/Pizza.jpg",
-    "placeName": "The Libyans",
+    "placeImage": "assets/images/mashwe.jpg",
+    "placeName": "مشكل المذاق شيش لحم خروف",
     "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
     "minOrder": 20
   },
   {
-    "placeImage": "assets/images/Pizza.jpg",
-    "placeName": "The reeeeeee",
+    "placeImage": "assets/images/salad.jpg",
+    "placeName": "شيش طـاووق مشوي",
     "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
     "minOrder": 20
   },
   {
-    "placeImage": "assets/images/Pizza.jpg",
+    "placeImage": "assets/images/shawerma.jpg",
+    "placeName": "كبـــدة مشوية",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/sandwich.jpg",
+    "placeName": "كبـــاب حلبي",
+    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
+    "minOrder": 20
+  },
+  {
+    "placeImage": "assets/images/baged_meals.jpg",
     "placeName": "The tes",
     "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
     "minOrder": 20
   },
   {
-    "placeImage": "assets/images/Pizza.jpg",
-    "placeName": "The tes",
-    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
-    "minOrder": 20
-  },
-  {
-    "placeImage": "assets/images/Pizza.jpg",
-    "placeName": "The tes",
-    "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
-    "minOrder": 20
-  },
-  {
-    "placeImage": "assets/images/Pizza.jpg",
+    "placeImage": "assets/images/mashwe.jpg",
     "placeName": "The tes",
     "placeItems": ["Burgers","Chinese","Fast Food","Italian","juice"],
     "minOrder": 20

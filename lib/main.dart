@@ -1,5 +1,7 @@
+import 'package:almadak/screens/detailView/singleView.dart';
 import 'package:almadak/screens/menu.dart';
-import 'file:///D:/Apps/Flutter/almadak/lib/screens/detailView/singleView.dart';
+import 'package:almadak/screens/detailView/item_image.dart';
+import 'package:almadak/screens/detailView/title_price.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DetailsView(),
+      home: MyHomePage(),
     );
   }
 }
