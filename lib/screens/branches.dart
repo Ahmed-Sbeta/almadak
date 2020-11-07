@@ -1,151 +1,136 @@
+import 'package:almadak/screens/menu1.dart';
+import 'package:almadak/screens/menu2.dart';
+import 'package:almadak/screens/menu3.dart';
+import 'package:almadak/screens/menu4.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import 'branches/branchesClass.dart';
+
+List<Branches> branchesList = [
+  Branches(name: 'المذاق 1 - مشويات',image: "assets/images/mashwe.jpg" ,location: "ضصثض",number: '09254654',description: "حي الأندلس"),
+  Branches(name: 'المذاق 2 - معجنات',image: "assets/images/salad.jpg" ,location: "ضصثض",number: '09254654',description: "حي الأندلس"),
+  Branches(name: 'المذاق 3 - مشويات',image: "assets/images/meals_meat.jpg" ,location: "ضصثض",number: '09254654',description:"الجرابه" ),
+  Branches(name: 'المذاق 4 - مشويات',image: "assets/images/happybox.jpg" ,location: "ضصثض",number: '09254654',description: "حي الأندلس VIP"),
+
+];
+
+Future<void> _makePhoneCall(String num) async {
+  if(await canLaunch(num)){
+    await launch(num);
+  }else{
+    throw 'Could not call $num';
+  }
+}
+// ignore: camel_case_types
 class branches extends StatefulWidget{
   @override
   _branchesState createState() => _branchesState();
 }
 
+// ignore: camel_case_types
 class _branchesState extends State<branches>{
+  Future<void> _makePhoneCall(String num) async {
+    if(await canLaunch(num)){
+      await launch(num);
+    }else{
+      throw 'Could not call $num';
+    }
+  }
+  Future<void> _mapInBrowser(String url) async {
+    if(await canLaunch(url)){
+      await launch(url, forceSafariVC: false , forceWebView: false );
+    }else{
+      throw 'Could not open map';
+    }
+  }
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/images/mm.jpeg'),
-                fit: BoxFit.cover
-            )
-        ),
+      appBar: AppBar(
+        backgroundColor: Color(0xffee1d23),
+        title: Text("فروع المذاق",style: TextStyle(fontSize:32 , fontFamily: "Reem"),),
+        centerTitle: true,
+        automaticallyImplyLeading: true,
+        leading: IconButton(icon: Icon(Icons.arrow_back),
+          onPressed: () { Navigator.of(context).pop(); },),
 
-        child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  colors: [
-                    Colors.black.withOpacity(.8),
-                    Colors.black.withOpacity(.8),
-                    Colors.black.withOpacity(.1),
-                  ]
-              )
-          ),
-
-          child: Padding(
-            padding: EdgeInsets.all(30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SizedBox(height: 0,),
-                Center(child: Image.asset('assets/images/madaq4.png', scale: 3,),),
-                Column(
-                  children: [
-                    Text('فروع المذاق', style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),),
-                    // Text("", style: TextStyle(color: Colors.white, fontSize: 13),textAlign: TextAlign.center),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          gradient: LinearGradient(
-                              colors: [
-                                Color(0xffee1d23),
-                                Color(0xffee1d23)
-                              ]
-                          )
-                      ),
-                      child: MaterialButton(
-                        onPressed: (){
-                        },
-                        minWidth: double.infinity,
-                        child: Text("حي الاندلس 1", style: TextStyle(color: Colors.white, fontSize: 20),),
-                      ),
-                    ),
-                    SizedBox(height: 5,),
-                    Container(
-                      child: Text("للشاورما والمشويات - بالقرب من قاعة الشعب", style: TextStyle(color: Colors.white, fontSize: 13),textAlign: TextAlign.center),
-
-                    ),
-                    SizedBox(height: 5,),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          gradient: LinearGradient(
-                              colors: [
-                                Color(0xffee1d23),
-                                Color(0xffee1d23)
-                              ]
-                          )
-                      ),
-                      child: MaterialButton(
-                        onPressed: (){
-                        },
-                        minWidth: double.infinity,
-                        child: Text("حي الاندلس 2", style: TextStyle(color: Colors.white, fontSize: 20),),
-                      ),
-                    ),
-                    SizedBox(height: 5,),
-                    Container(
-                      child: Text("بيتزا ومعجنات - بالقرب من قاعة الشهداء", style: TextStyle(color: Colors.white, fontSize: 13),textAlign: TextAlign.center),
-
-                    ),
-                    SizedBox(height: 5,),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          gradient: LinearGradient(
-                              colors: [
-                                Color(0xffee1d23),
-                                Color(0xffee1d23)
-                              ]
-                          )
-                      ),
-                      child: MaterialButton(
-                        onPressed: (){
-                        },
-                        minWidth: double.infinity,
-                        child: Text("الجرابة", style: TextStyle(color: Colors.white, fontSize: 20),),
-                      ),
-                    ),
-                    SizedBox(height: 5,),
-                    Container(
-                      child: Text("للشاورما والمشويات - شارع جعفر بن أبي طالب", style: TextStyle(color: Colors.white, fontSize: 13),textAlign: TextAlign.center),
-
-                    ),
-                    SizedBox(height: 3,),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          gradient: LinearGradient(
-                              colors: [
-                                Color(0xffee1d23),
-                                Color(0xffee1d23)
-                              ]
-                          )
-                      ),
-                      child: MaterialButton(
-                        onPressed: (){
-                        },
-                        minWidth: double.infinity,
-                        child: Text("VIP حي الاندلس", style: TextStyle(color: Colors.white, fontSize: 20),),
-                      ),
-                    ),
-                    SizedBox(height: 5,),
-                    Container(
-                      child: Text("للشاورما والمشويات - بالقرب من مصرف التجاري الوطني", style: TextStyle(color: Colors.white, fontSize: 13),textAlign: TextAlign.center),
-
-                    ),
-
-                  ],
-                ),
-                Text("مطعم المذاق هو عشق لمذاق لن تجدة الا في مطاعم المذاق ", style: TextStyle(color: Colors.white70, fontSize: 15),textAlign: TextAlign.center,),
-              ],
-            ),
-          ),
-        ),
       ),
+      body:new ListView.builder(
+        itemBuilder: (context,index){
+        return new Padding(
+          padding: new EdgeInsets.symmetric(vertical: 8.0,horizontal:16.0),
+         child: new Card(
+           color: Colors.white,
+           elevation: 8.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
+             ),
+           child:Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ClipRRect(
+                    child: new Image.asset(branchesList[index].image),
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(16.0),topRight:Radius.circular(16.0)),
+                  ),
+                  new Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: new Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          branchesList[index].name,
+                          style: TextStyle(fontSize: 24)
+                        ),
+                        new SizedBox(height: 16.0,),
+                        new Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Menu1(),
+                                ));
+                              },
+                              child: Row(
+                                children: [
+                                  Text("منيو"),
+                                  SizedBox(width: 4.0,),
+                                  Icon(Icons.import_contacts,
+                                  color:Color(0xffee1d23) ,)
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text("اتصــال",textAlign: TextAlign.center),
+                                SizedBox(width: 4.0,),
+                                Icon(Icons.call,
+                                  color:Color(0xffee1d23) ,),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(branchesList[index].description,textAlign: TextAlign.right),
+                                Icon(Icons.location_on,
+                                  color:Color(0xffee1d23) ,),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+           ),
+         ),
+      );
+    },
+    itemCount: 4,
+    ),
     );
   }
 }

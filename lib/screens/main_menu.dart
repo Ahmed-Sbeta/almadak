@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class menu extends StatefulWidget{
   @override
   _menuState createState() => _menuState();
 }
 
+// ignore: camel_case_types
 class _menuState extends State<menu>{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(

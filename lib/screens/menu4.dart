@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:almadak/screens/detailView/singleView.dart';
 import 'package:flutter/material.dart';
 
 //banner items
@@ -14,12 +15,12 @@ var bannerImages = [
 
 String path = "meals.json";
 
-class MyHomePage extends StatefulWidget {
+class Menu4 extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<Menu4> {
   @override
   Widget build(BuildContext context) {
     var screenHieght = MediaQuery.of(context).size.height;
@@ -39,6 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
               if(x==1){path="meals.json";}
               if(x==2){path="mashaweat.json";}
               if(x==3){path="Pizza.json";}
+              if(x==4){path="Burger.json";}
+              if(x==5){path="meals.json";}
+
             });
           },
           child: Container(
@@ -133,6 +137,9 @@ class _MyHomePageState extends State<MyHomePage> {
             child: InkWell(
               onTap: (){
                 print(object["placeName"]);
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DetailsView(name: object["placeName"]),
+                ));
               },
               child:Row(
               mainAxisSize: MainAxisSize.max,
@@ -167,6 +174,15 @@ class _MyHomePageState extends State<MyHomePage> {
     //end
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Color(0xffee1d23),
+        title: Text("منيو المذاق",style: TextStyle(fontSize:32 , fontFamily: "Reem"),),
+        centerTitle: true,
+        automaticallyImplyLeading: true,
+        leading: IconButton(icon: Icon(Icons.arrow_back),
+          onPressed: () { Navigator.of(context).pop(); },),
+
+      ),
       body: Container(
         height: screenHieght,
         width: screenWidth,
@@ -175,16 +191,16 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(icon: Icon(Icons.arrow_back),onPressed: (){
-
-                    }),
-                    Text("المذاق", style: TextStyle(fontSize:32 , fontFamily: "Reem"), ),
-                    IconButton(icon: Icon(Icons.location_on), onPressed: (){}),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     IconButton(icon: Icon(Icons.arrow_back),onPressed: (){
+                //       Navigator.pop(context);
+                //     }),
+                //     Text("المذاق", style: TextStyle(fontSize:32 , fontFamily: "Reem"), ),
+                //     IconButton(icon: Icon(Icons.location_on), onPressed: (){}),
+                //   ],
+                // ),
                 Container(
                     width: screenWidth,
                     height: screenWidth*9/16,

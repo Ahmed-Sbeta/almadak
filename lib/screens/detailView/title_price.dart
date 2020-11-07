@@ -11,14 +11,12 @@ class TitlePrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(vertical: 15),
-            height: 66,
-            width: 65,
+            padding: EdgeInsets.symmetric(vertical: 10),
             color: Colors.white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -51,9 +49,12 @@ class TitlePrice extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  name,
-                  style: Theme.of(context).textTheme.headline,
+                Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Text(
+                    name,
+                    style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),

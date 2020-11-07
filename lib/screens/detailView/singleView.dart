@@ -5,22 +5,48 @@ import 'package:flutter/material.dart';
 import 'app_bar.dart';
 
 class DetailsView extends StatefulWidget {
+  String name;
+  DetailsView({this.name});
   @override
-  _DetailsViewState createState() => _DetailsViewState();
+  _DetailsViewState createState() => _DetailsViewState(name: name);
 }
 
 class _DetailsViewState extends State<DetailsView> {
+  
+  String name;
+  _DetailsViewState({this.name});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
-      appBar: buildAppBar(),
-      body: Body(),
+      backgroundColor:Colors.transparent,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: Body(name: name),
     );
   }
 }
 
 class Body extends StatelessWidget {
+  String name = "";
+  Body({this.name});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,18 +55,21 @@ class Body extends StatelessWidget {
           imgSrc: "assets/images/meals_meat.jpg",
         ),
         Expanded(
-          child: ItemInfo(),
+          child: ItemInfo(name:name),
         ),
       ],
     );
   }
 }
 
+// ignore: must_be_immutable
 class ItemInfo extends StatelessWidget {
-  const ItemInfo({
-    Key key,
-  }) : super(key: key);
 
+  String name = "";
+  ItemInfo({this.name});
+
+
+  
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -57,18 +86,18 @@ class ItemInfo extends StatelessWidget {
       child: Column(
         children: [
           shopName("المذاق"),
-          TitlePrice(name: "شاورما لحم",
+          TitlePrice(name: name,
           price: 20,),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                "sadsafdsfdsfdsfdsfsdfdsf",
-                style: TextStyle(
-                  height: 0.5,
+          Container(
+            alignment: Alignment.topRight,
+            child:
+              Padding(
+                padding: const EdgeInsets.only(right: 10.0,left: 10.0),
+                child: Text(
+                  "مرحبا بكم في مطعم المذاق زباءينيسبكم كيمبن سحخثن كس سيحخبن ثصب كيمسن ثصحخب نيكس ثصحم يس",
+                  textAlign: TextAlign.right,
                 ),
               ),
-            ],
           ),
           SizedBox(height: size.height *0.05),
 
@@ -76,7 +105,7 @@ class ItemInfo extends StatelessWidget {
             // padding: EdgeInsets.all(10),
             width: size.width * 0.8,
             decoration: BoxDecoration(
-              color: Colors.red,
+              color: Color(0xffee1d23),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Material(
@@ -112,7 +141,7 @@ class ItemInfo extends StatelessWidget {
           children: [
             Icon(
               Icons.location_on,
-              color: Colors.red,
+              color: Color(0xffee1d23),
             ),
             SizedBox(width: 10,),
             Text(

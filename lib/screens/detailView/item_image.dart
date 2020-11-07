@@ -15,7 +15,7 @@ class ItemImage extends StatelessWidget {
         .of(context)
         .size;
     return Image.asset(
-      //covers 25% of total height
+      //covers 45% of total height
       imgSrc,
       height: size.height * 0.45,
       width: double.infinity,

@@ -1,4 +1,7 @@
+import 'package:almadak/screens/branches.dart';
+import 'package:almadak/screens/main_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 
 class StarterPage extends StatefulWidget{
@@ -9,6 +12,10 @@ class StarterPage extends StatefulWidget{
 class _StarterPageState extends State<StarterPage>{
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     // TODO: implement build
     return Scaffold(
       body: Container(
@@ -47,23 +54,6 @@ class _StarterPageState extends State<StarterPage>{
                 ),
                 Column(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          gradient: LinearGradient(
-                              colors: [
-                                Color(0xffee1d23),
-                                Color(0xffee1d23)
-                              ]
-                          )
-                      ),
-                      child: MaterialButton(
-                        onPressed: (){
-                        },
-                        minWidth: double.infinity,
-                        child: Text("منيو المذاق", style: TextStyle(color: Colors.white, fontSize: 20),),
-                      ),
-                    ),
                     SizedBox(height: 10,),
                     Container(
                       decoration: BoxDecoration(
@@ -75,11 +65,16 @@ class _StarterPageState extends State<StarterPage>{
                               ]
                           )
                       ),
-                      child: MaterialButton(
-                        onPressed: (){
-                        },
-                        minWidth: double.infinity,
-                        child: Text("فروع المذاق", style: TextStyle(color: Colors.white, fontSize: 20),),
+                      child: Container(
+                        child: MaterialButton(
+                          onPressed: (){
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => branches()
+                            ));
+                          },
+                          minWidth: double.infinity,
+                          child: Text("مطعـم المـذاق", style: TextStyle(color: Colors.white, fontSize: 20),),
+                        ),
                       ),
                     ),
                   ],
